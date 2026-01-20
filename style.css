@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+  color: #f5f1e8;
+}
+
+/* Tap screen */
+#tapScreen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #d6c79a;
+  animation: pulse 1.6s infinite;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Main center */
+#main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 0 24px;
+  display: none;
+}
+
+/* Title */
+h1 {
+  font-size: 2.4rem;
+  color: #e6d8a8;
+  margin-bottom: 10px;
+  min-height: 70px;
+}
+
+/* Name */
+h2 {
+  font-size: 3rem;
+  color: #fff6d5;
+  margin-bottom: 18px;
+  animation: glow 2.5s infinite;
+}
+
+@keyframes glow {
+  0%,100% { text-shadow: 0 0 8px #d6c79a; }
+  50% { text-shadow: 0 0 20px #fff2c2; }
+}
+
+/* Gift */
+#giftBox {
+  font-size: 3.5rem;
+  margin: 20px auto;
+  cursor: pointer;
+  animation: bounce 1.4s infinite;
+  display: none;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Letter */
+#letter p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+  margin: 14px 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+#letter p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.signature {
+  font-size: 1.4rem;
+  color: #e6d8a8;
+  margin-top: 10px;
+}
+
+/* Hearts (subtle) */
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  font-size: 16px;
+  opacity: 0.4;
+  animation: float 12s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.5; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Fireworks */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  from { transform: scale(0); opacity: 1; }
+  to { transform: scale(22); opacity: 0; }
+}
