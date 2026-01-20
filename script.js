@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gift = document.getElementById("giftBox");
   const photoBox = document.getElementById("photoBox");
   const lines = document.querySelectorAll("#letter p");
+  const music = document.getElementById("music");
 
   const text = "Happy Birthday, My Love 🤍";
   let index = 0;
@@ -28,10 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Tap to begin */
   tapScreen.addEventListener("click", () => {
-    tapScreen.style.display = "none";
-    main.style.display = "block";
-    typeText();
-  });
+  tapScreen.style.display = "none";
+  main.style.display = "block";
+
+  music.volume = 0.6;
+  music.play();   // 🎵 start music after user tap
+
+  typeText();
+});
 
   function typeText() {
     if (index < text.length) {
