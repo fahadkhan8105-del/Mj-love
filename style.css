@@ -127,3 +127,69 @@ h2 {
   from { transform: scale(0); opacity: 1; }
   to { transform: scale(22); opacity: 0; }
 }
+.hidden { display: none; }
+
+/* 🔒 Lock Screen */
+#lockScreen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  color: #e6d8a8;
+  text-align: center;
+}
+
+.lock-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+#passcode {
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+#unlockBtn {
+  padding: 8px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  background: #e6d8a8;
+  color: #000;
+  cursor: pointer;
+}
+
+#lockError {
+  margin-top: 10px;
+  color: #ff8fab;
+  display: none;
+}
+
+/* 🖼️ Photo inside gift */
+#photoBox {
+  display: none;
+  margin: 20px auto;
+}
+
+#photoBox img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 25px #e6d8a8;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
